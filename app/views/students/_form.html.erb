@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row centre">
+      <div class="card white">
+        <div class="row">
+          <div class="col s12">
+            <h3 class="center-align"><%=@student.new_record? ? "Sign up" : "Edit profile"%></h3>
+          </div>
+        </div>
+        <div class="row">
+          <%= form_for @student do |s| %>
+
+          <div class="row">
+              <div class="col s12">
+                    <div class="input-field col s10">
+                      <i class="material-icons prefix">account_circle</i>
+                      <%= s.text_field :name ,placeholder: "Name",autofocus: true%>
+                    </div>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col s12">
+                <div class="input-field col s10">
+                      <i class="material-icons prefix">email</i>
+                      <%= s.email_field :email,placeholder: "Email",autofocus: true %>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+                <div class="input-field col s10">
+                      <i class="material-icons prefix">lock</i>
+                      <%= s.password_field :password,placeholder: "password",autofocus: true %>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+                <div class="input-field col s10">
+                      <i class="material-icons prefix">lock</i>
+                      <%= s.password_field :password_confirmation,placeholder: "password confirmation",autofocus: true %>
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+                <div class="input-field col s10">
+                    <%= s.button (@student.new_record?) ? "Sign up" : "Edit" ,class: "btn waves-effect waves-light right" %>
+                  </div>
+          </div>
+
+          <% end %>
+        </div>
+
+      </div>
+  </div>
+  </div>
